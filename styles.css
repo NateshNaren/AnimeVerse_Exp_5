@@ -1,0 +1,138 @@
+/* AniVerse Hub - dark and sakura pink theme */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0d0b1e;
+  color: #f2f0ff;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1c1745, #0d0b1e 70%);
+  border-bottom: 3px solid #ff5fa2;
+  padding: 40px 20px;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header-text { flex: 1; }
+.header-img { flex: 1; }
+.header-img img { width: 100%; border-radius: 16px; border: 2px solid #ff5fa2; display: block; }
+.header h1 { font-size: 3rem; letter-spacing: 2px; color: #ff5fa2; }
+.tagline { color: #ffd166; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+.sub { color: #b9b4e0; margin-bottom: 20px; }
+
+.cta-btn, .cta-outline {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.cta-btn { background: linear-gradient(90deg, #ff5fa2, #ffd166); color: #1a1030; }
+.cta-outline { border: 2px solid #ff5fa2; color: #ff5fa2; }
+
+/* Navigation */
+.nav {
+  background: #151233;
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  position: sticky;
+  top: 0;
+}
+.nav a {
+  color: #b9b4e0;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 3px;
+  font-size: 0.95rem;
+}
+.nav a:hover { background: #ff5fa2; color: #1a1030; }
+
+/* Layout */
+.container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+.section { margin-bottom: 40px; }
+.section-title { text-align: center; color: #ffd166; font-size: 1.8rem; }
+.section-sub { text-align: center; color: #a9a4cf; margin-bottom: 18px; }
+
+.row { display: flex; gap: 20px; }
+.row > .panel { flex: 1; }
+
+.panel {
+  background: #1b1740;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 22px;
+}
+.panel h3 { color: #ff5fa2; margin-bottom: 14px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.center { text-align: center; }
+
+/* Form controls */
+.field { margin-bottom: 14px; flex: 1; }
+.field label, .tips { display: block; font-size: 0.85rem; color: #a9a4cf; margin-bottom: 4px; }
+.tips { margin: 6px 0 16px; }
+.tips label { display: inline; color: #f2f0ff; margin-left: 10px; font-size: 0.95rem; }
+
+input[type="text"], select {
+  width: 100%;
+  padding: 9px 12px;
+  background: #0f0c26;
+  color: #f2f0ff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+input[type="radio"] { accent-color: #ff5fa2; }
+.inline-fields { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
+
+.btn {
+  background: linear-gradient(90deg, #ff5fa2, #ffd166);
+  color: #1a1030;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+.btn:hover { filter: brightness(1.1); }
+
+/* Results */
+.output { border-top: 1px dashed rgba(255, 255, 255, 0.25); padding-top: 10px; }
+.result { color: #ffd166; font-weight: 700; }
+.result-line { margin-bottom: 8px; }
+.note { color: #a9a4cf; font-size: 0.9rem; margin-top: 6px; }
+.total-line { margin-top: 16px; font-size: 1.1rem; }
+
+.price-table { width: 100%; border-collapse: collapse; }
+.price-table th { text-align: left; color: #ff5fa2; border-bottom: 1px solid rgba(255, 255, 255, 0.25); padding: 6px; }
+.price-table td { padding: 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.price-table tr.active-row td { background: rgba(255, 209, 102, 0.18); color: #ffd166; font-weight: 700; }
+
+.rates { display: flex; gap: 12px; }
+.rate-box { flex: 1; text-align: center; background: #0f0c26; border-radius: 10px; padding: 14px 6px; }
+.rate-label { display: block; color: #a9a4cf; font-size: 0.85rem; }
+.rate-value { font-size: 1.5rem; font-weight: 700; color: #ffd166; }
+
+/* Garden and coin */
+#garden { text-align: center; line-height: 0; margin-top: 14px; }
+#garden img { width: 90px; height: 90px; margin: 3px; border-radius: 10px; }
+#coin { width: 170px; height: 170px; border-radius: 50%; margin-bottom: 12px; }
+
+.footer { text-align: center; color: #a9a4cf; font-size: 0.85rem; padding: 24px; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+
+/* Small screens */
+@media (max-width: 700px) {
+  .header-inner, .row { flex-direction: column; }
+  .header h1 { font-size: 2.2rem; }
+}

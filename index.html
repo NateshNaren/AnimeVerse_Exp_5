@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AniVerse Hub - Anime Fan Tools</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-text">
+      <h1>AniVerse Hub</h1>
+      <p class="tagline">The Anime Fan Site</p>
+      <p class="sub">
+        Fan tools for every otaku.<br>
+        Title scanning, power checks, chibi farming, merch pricing and
+        birthday cake orders &ndash; all in one place.
+      </p>
+      <a href="#caption" class="cta-btn">Try the Tools</a>
+      <a href="#order" class="cta-outline">Order a Cake</a>
+    </div>
+    <div class="header-img"><img src="banner.jpg" alt="Chibi apple, orange, sun coin and moon coin"></div>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#caption">Title Scanner</a>
+  <a href="#bmi">Power Check</a>
+  <a href="#gallery">Chibi Farm</a>
+  <a href="#converter">Merch Converter</a>
+  <a href="#flipper">Fate Coin</a>
+  <a href="#order">Cake Orders</a>
+</div>
+
+<div class="container">
+
+  <!-- 1. Shortest and longest word -->
+  <div class="section" id="caption">
+    <h2 class="section-title">Title Scanner</h2>
+    <p class="section-sub">Find the shortest and longest word in an anime title</p>
+    <div class="row">
+      <div class="panel">
+        <h3>Enter Title</h3>
+        <div class="field">
+          <label for="text">Anime title</label>
+          <input type="text" id="text" value="Web Development Tutorial">
+        </div>
+        <button class="btn" onclick="findWords();">Find Words</button>
+      </div>
+      <div class="panel">
+        <h3>Result</h3>
+        <p class="result-line">Shortest: <span id="shortest" class="result"></span></p>
+        <p class="result-line">Longest: <span id="longest" class="result"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. BMI calculator -->
+  <div class="section" id="bmi">
+    <h2 class="section-title">Calculate your Body Mass Index (BMI)!</h2>
+    <p class="section-sub">A quick health check before the tournament arc</p>
+    <div class="row">
+      <div class="panel">
+        <h3>Your Details</h3>
+        <div class="field">
+          <label for="weight">Weight (in kilograms)</label>
+          <input type="text" id="weight">
+        </div>
+        <div class="field">
+          <label for="height">Height (in meters)</label>
+          <input type="text" id="height">
+        </div>
+        <button class="btn" onclick="calculate();">Get BMI!</button>
+        <div class="output">
+          <p>Your BMI is <span id="score" class="result"></span>.</p>
+          <p>Your body type is <span id="type" class="result"></span>.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>BMI Chart</h3>
+        <table class="price-table">
+          <tr><th>Body Type</th><th>BMI Range</th></tr>
+          <tr id="row-Underweight"><td>Underweight</td><td>Below 18</td></tr>
+          <tr id="row-Normal"><td>Normal</td><td>18 &ndash; 25</td></tr>
+          <tr id="row-Overweight"><td>Overweight</td><td>25 &ndash; 30</td></tr>
+          <tr id="row-Obese"><td>Obese</td><td>Above 30</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Chibi fruit farm -->
+  <div class="section" id="gallery">
+    <h2 class="section-title">Chibi Fruit Farm</h2>
+    <p class="section-sub">Each plot randomly grows an apple or an orange</p>
+    <div class="panel">
+      <div class="inline-fields">
+        <div class="field">
+          <label for="rows">Rows</label>
+          <input type="text" id="rows" value="2">
+        </div>
+        <div class="field">
+          <label for="columns">Columns</label>
+          <input type="text" id="columns" value="5">
+        </div>
+        <button class="btn" onclick="grow();">Plant Garden</button>
+      </div>
+      <p class="note" id="tally"></p>
+      <div id="garden"></div>
+    </div>
+  </div>
+
+  <!-- 4. Currency converter -->
+  <div class="section" id="converter">
+    <h2 class="section-title">Merch Converter</h2>
+    <p class="section-sub">Convert figure and manga prices between rupees and dollars</p>
+    <div class="row">
+      <div class="panel">
+        <h3>Convert</h3>
+        <div class="field">
+          <label for="data">Amount</label>
+          <input type="text" id="data">
+        </div>
+        <div class="inline-fields">
+          <div class="field">
+            <label for="from">From</label>
+            <select id="from">
+              <option>Indian Rupee</option>
+              <option>US Dollar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="to">To</label>
+            <select id="to">
+              <option>US Dollar</option>
+              <option>Indian Rupee</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn" onclick="convert();">Calculate</button>
+        <div class="output">
+          <p>Converted amount: <span id="answer" class="result"></span></p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Conversion Rates</h3>
+        <div class="rates">
+          <div class="rate-box"><span class="rate-label">1 Rupee</span><span class="rate-value">$0.015</span></div>
+          <div class="rate-box"><span class="rate-label">1 Dollar</span><span class="rate-value">Rs.67.12</span></div>
+        </div>
+        <p class="note">Handy when a limited edition figure is listed on an overseas store.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Coin flip -->
+  <div class="section" id="flipper">
+    <h2 class="section-title">Fate Coin</h2>
+    <p class="section-sub">Heads is the Sun Hero, tails is the Moon Rival</p>
+    <div class="row">
+      <div class="panel center">
+        <img src="heads.jpg" id="coin" alt="Sun coin (heads)"><br>
+        <button class="btn" id="flip">Flip!</button>
+        <p class="note" id="verdict">Press Flip! to decide the next fight.</p>
+      </div>
+      <div class="panel">
+        <h3>Score Board</h3>
+        <p class="result-line">Heads Total: <span id="num_heads" class="result">0</span></p>
+        <p class="result-line">Tails Total: <span id="num_tails" class="result">0</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Birthday cake order form -->
+  <div class="section" id="order">
+    <h2 class="section-title">Birthday Cake Order Form</h2>
+    <p class="section-sub">Celebrate your favourite character's birthday</p>
+    <div class="row">
+      <div class="panel">
+        <h3>Your Order</h3>
+        <div class="field">
+          <label for="small"># of 1/2kg Cakes</label>
+          <input type="text" id="small">
+        </div>
+        <div class="field">
+          <label for="medium"># of 1kg Cakes</label>
+          <input type="text" id="medium">
+        </div>
+        <div class="field">
+          <label for="large"># of 2kg Cakes</label>
+          <input type="text" id="large">
+        </div>
+        <div class="tips">
+          Tip:
+          <label><input type="radio" value="10" name="tip"> 10%</label>
+          <label><input type="radio" value="15" name="tip" checked="checked"> 15%</label>
+          <label><input type="radio" value="20" name="tip"> 20%</label>
+        </div>
+        <button class="btn" id="submit">Calculate Order</button>
+      </div>
+      <div class="panel">
+        <h3>Price List</h3>
+        <table class="price-table">
+          <tr><th>Cake</th><th>Price</th></tr>
+          <tr><td>1/2 kg</td><td>Rs.100</td></tr>
+          <tr><td>1 kg</td><td>Rs.200</td></tr>
+          <tr><td>2 kg</td><td>Rs.400</td></tr>
+        </table>
+        <p class="total-line">Cost of order: <span id="price" class="result"></span></p>
+        <p class="note" id="details">Tax is 9% of the order. The tip is added on the total after tax.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">AniVerse Hub &middot; Ex.5 JavaScript DOM Elements and Events &middot; fan project</div>
+
+<script src="script.js"></script>
+</body>
+</html>
